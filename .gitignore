@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Environment
+.env
+
+# Output directories
+outputs/
+logs/
+data/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Debug
+*.log
+
+# Test files (may contain API keys or sensitive output)
+test-*.txt
+test-*.js
+debug-*.js
+*-output.txt
+*-result.txt

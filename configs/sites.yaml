@@ -1,0 +1,134 @@
+# Site Configuration for Price Monitor
+# Each site defines search methods, selectors, and extraction strategies
+
+sites:
+  google:
+    name: "Google Shopping"
+    type: "search_engine"
+    domains:
+      - "google.com"
+      - "google.de"
+      - "google.es"
+      - "google.fr"
+      - "google.it"
+    search_url: "https://www.google.com/search?q={query}&tbm=shop"
+    selectors:
+      result_container: "[data-docid]"
+      price: ".a8Pemb"
+      product_name: ".tAxDx"
+      product_link: "a.shntl"
+    rate_limit: 5000
+    requires_javascript: true
+    notes: "Google Shopping results; may vary by region"
+
+  zalando:
+    name: "Zalando"
+    type: "retailer"
+    domains:
+      - "zalando.com"
+      - "zalando.de"
+      - "zalando.es"
+      - "zalando.fr"
+      - "zalando.it"
+      - "zalando.co.uk"
+    search_url: "https://www.zalando.com/catalog/?q={query}"
+    product_url_pattern: "https://www.zalando.com/{slug}.html"
+    selectors:
+      search_input: "input[name='q']"
+      result_container: "[data-zalon-partner-target='true']"
+      price: "[class*='_price']"
+      original_price: "[class*='_originalPrice']"
+      product_name: "[class*='_productName']"
+      product_link: "a[href*='/']"
+      size_selector: "[data-testid='size-picker']"
+      cookie_accept: "#uc-btn-accept-banner"
+    extraction:
+      price_regex: "([0-9]+[.,][0-9]{2})\\s*€?"
+      currency_symbol: "€"
+    rate_limit: 5000
+    requires_javascript: true
+
+  farfetch:
+    name: "Farfetch"
+    type: "retailer"
+    domains:
+      - "farfetch.com"
+    search_url: "https://www.farfetch.com/shopping/women/search/items.aspx?q={query}"
+    selectors:
+      search_input: "input[data-component='SearchInputDesktop']"
+      result_container: "[data-testid='productCard']"
+      price: "[data-component='Price']"
+      product_name: "[data-component='ProductCardDescription']"
+      product_link: "a[data-component='ProductCardLink']"
+      cookie_accept: "[data-testid='cookie-banner-accept']"
+    extraction:
+      price_regex: "([0-9]+[.,]?[0-9]*)\\s*(?:€|\\$|£)"
+    rate_limit: 6000
+    requires_javascript: true
+
+  asos:
+    name: "ASOS"
+    type: "retailer"
+    domains:
+      - "asos.com"
+    search_url: "https://www.asos.com/search/?q={query}"
+    selectors:
+      search_input: "input[type='search']"
+      result_container: "[data-auto-id='productTile']"
+      price: "[data-auto-id='productTilePrice']"
+      product_name: "[data-auto-id='productTileDescription']"
+      product_link: "a[data-auto-id='productTileLink']"
+      cookie_accept: "#onetrust-accept-btn-handler"
+    extraction:
+      price_regex: "([0-9]+[.,][0-9]{2})"
+    rate_limit: 5000
+    requires_javascript: true
+
+  zara:
+    name: "Zara"
+    type: "retailer"
+    domains:
+      - "zara.com"
+    search_url: "https://www.zara.com/search?searchTerm={query}"
+    selectors:
+      search_input: "input[type='search']"
+      result_container: ".product-grid-product"
+      price: ".price__amount"
+      product_name: ".product-grid-product-info__name"
+      product_link: "a.product-grid-product__link"
+      cookie_accept: "#onetrust-accept-btn-handler"
+    extraction:
+      price_regex: "([0-9]+[.,][0-9]{2})"
+    rate_limit: 5000
+    requires_javascript: true
+
+  hm:
+    name: "H&M"
+    type: "retailer"
+    domains:
+      - "hm.com"
+      - "www2.hm.com"
+    search_url: "https://www2.hm.com/en_gb/search-results.html?q={query}"
+    selectors:
+      search_input: "input[type='search']"
+      result_container: ".product-item"
+      price: ".item-price"
+      product_name: ".item-heading"
+      product_link: "a.item-link"
+      cookie_accept: "#onetrust-accept-btn-handler"
+    extraction:
+      price_regex: "([0-9]+[.,][0-9]{2})"
+    rate_limit: 5000
+    requires_javascript: true
+
+# Default settings for unknown sites
+defaults:
+  rate_limit: 7000
+  timeout: 30000
+  retry_count: 2
+  human_delay:
+    min: 800
+    max: 2500
+  scroll_delay:
+    min: 300
+    max: 800

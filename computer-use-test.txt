@@ -1,0 +1,18 @@
+Testing Computer Use with proper tool config...
+
+=== Test: Computer Use with tool ===
+Model created successfully
+Response received!
+{
+  "parts": [
+    {
+      "functionCall": {
+        "name": "open_web_browser",
+        "args": {}
+      }
+    }
+  ],
+  "role": "model"
+}
+
+Done.

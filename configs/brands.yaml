@@ -1,0 +1,174 @@
+# Brand Configuration for Normalization
+# Maps common variations/misspellings to canonical brand names
+
+brands:
+  nnormal:
+    canonical: "NNormal"
+    aliases:
+      - "nnormal"
+      - "NNORMAL"
+      - "NNormal"
+      - "N Normal"
+      - "N-Normal"
+    popular_models:
+      - "Tomir 02"
+      - "Tomir 02 Gore-Tex"
+      - "Kjerag 02"
+      - "Kjerag Brut"
+      - "Kboix 01"
+
+  nike:
+    canonical: "Nike"
+    aliases:
+      - "nike"
+      - "NIKE"
+      - "Nike Inc"
+      - "Nike, Inc."
+    popular_models:
+      - "Air Force 1"
+      - "Air Max"
+      - "Air Jordan"
+      - "Dunk"
+      - "Blazer"
+
+  adidas:
+    canonical: "Adidas"
+    aliases:
+      - "adidas"
+      - "ADIDAS"
+      - "Adidas Originals"
+    popular_models:
+      - "Samba"
+      - "Stan Smith"
+      - "Superstar"
+      - "Gazelle"
+      - "Ultraboost"
+      - "NMD"
+
+  puma:
+    canonical: "Puma"
+    aliases:
+      - "puma"
+      - "PUMA"
+    popular_models:
+      - "Suede"
+      - "RS-X"
+      - "Cali"
+
+  new_balance:
+    canonical: "New Balance"
+    aliases:
+      - "new balance"
+      - "NEW BALANCE"
+      - "NB"
+      - "newbalance"
+    popular_models:
+      - "574"
+      - "990"
+      - "550"
+      - "2002R"
+
+  converse:
+    canonical: "Converse"
+    aliases:
+      - "converse"
+      - "CONVERSE"
+    popular_models:
+      - "Chuck Taylor"
+      - "All Star"
+      - "One Star"
+
+  vans:
+    canonical: "Vans"
+    aliases:
+      - "vans"
+      - "VANS"
+    popular_models:
+      - "Old Skool"
+      - "Sk8-Hi"
+      - "Authentic"
+      - "Era"
+
+  reebok:
+    canonical: "Reebok"
+    aliases:
+      - "reebok"
+      - "REEBOK"
+    popular_models:
+      - "Classic Leather"
+      - "Club C"
+
+  patagonia:
+    canonical: "Patagonia"
+    aliases:
+      - "patagonia"
+      - "PATAGONIA"
+    popular_models:
+      - "Down Sweater"
+      - "Nano Puff"
+      - "Better Sweater"
+      - "Torrentshell"
+
+  the_north_face:
+    canonical: "The North Face"
+    aliases:
+      - "the north face"
+      - "THE NORTH FACE"
+      - "TNF"
+      - "North Face"
+    popular_models:
+      - "Nuptse"
+      - "ThermoBall"
+      - "Denali"
+
+  levis:
+    canonical: "Levi's"
+    aliases:
+      - "levis"
+      - "levi's"
+      - "LEVIS"
+      - "LEVI'S"
+      - "Levi Strauss"
+    popular_models:
+      - "501"
+      - "511"
+      - "505"
+
+  zara:
+    canonical: "Zara"
+    aliases:
+      - "zara"
+      - "ZARA"
+
+  hm:
+    canonical: "H&M"
+    aliases:
+      - "h&m"
+      - "H&M"
+      - "hm"
+      - "HM"
+      - "Hennes & Mauritz"
+
+  uniqlo:
+    canonical: "Uniqlo"
+    aliases:
+      - "uniqlo"
+      - "UNIQLO"
+
+  gucci:
+    canonical: "Gucci"
+    aliases:
+      - "gucci"
+      - "GUCCI"
+
+  balenciaga:
+    canonical: "Balenciaga"
+    aliases:
+      - "balenciaga"
+      - "BALENCIAGA"
+
+  prada:
+    canonical: "Prada"
+    aliases:
+      - "prada"
+      - "PRADA"

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Price Monitor | Track Prices Naturally</title>
+  <meta name="description" content="Monitor apparel prices using natural language. Get notified when prices drop.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⬡</text></svg>">
+</head>
+
+<body>
+  <div class="app-container">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">Price Monitor</span>
+      </div>
+      <div class="header-status">
+        <span id="mode-badge" class="status-badge dry-run">Dry Run</span>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+      <!-- Input Section -->
+      <section class="input-section">
+        <h1 class="title">Track prices with natural language</h1>
+        <p class="subtitle">Describe what you're looking for. We'll find it.</p>
+
+        <div class="input-container">
+          <div class="input-wrapper">
+            <textarea id="query-input" class="query-input"
+              placeholder="Buscar NNormal Tomir 02 por debajo de 170€ en Google..." rows="2"></textarea>
+            <button id="submit-btn" class="submit-btn">
+              <span>Monitor</span>
+              <span class="btn-icon">→</span>
+            </button>
+          </div>
+
+          <div class="example-queries">
+            <span class="example-label">Try:</span>
+            <button class="example-btn" data-query="Buscar NNormal Tomir 02 por debajo de 170€ en Google">Tomir
+              02</button>
+            <button class="example-btn" data-query="Dime si las NNormal Kjerag 02 están por debajo de 190€">Kjerag
+              02</button>
+            <button class="example-btn" data-query="Buscar NNormal Tomir 02 Gore-Tex por debajo de 190€ online">Tomir 02
+              GTX</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Status Section (hidden by default) -->
+      <section id="status-section" class="status-section hidden">
+        <div class="status-card">
+          <div class="status-header">
+            <div class="status-icon-container">
+              <div class="status-spinner"></div>
+            </div>
+            <div class="status-info">
+              <h3 id="status-title">Processing</h3>
+              <p id="status-message">Analyzing your request...</p>
+            </div>
+          </div>
+          <div class="progress-bar">
+            <div id="progress-fill" class="progress-fill" style="width: 0%"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Parsed Section (hidden by default) -->
+      <section id="parsed-section" class="parsed-section hidden">
+        <div class="parsed-card">
+          <h4>Understood</h4>
+          <div id="parsed-content" class="parsed-content">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Error Section (hidden by default) -->
+      <section id="error-section" class="error-section hidden">
+        <div class="error-card">
+          <div class="error-icon">⚠</div>
+          <h3 id="error-title">Error</h3>
+          <p id="error-message">Something went wrong.</p>
+          <button id="retry-btn" class="retry-btn">Try Again</button>
+        </div>
+      </section>
+
+      <!-- Clarification Section (hidden by default) -->
+      <section id="clarification-section" class="clarification-section hidden">
+        <div class="clarification-card">
+          <div class="clarification-icon">?</div>
+          <h3>Need more details</h3>
+          <ul id="clarification-list" class="clarification-list">
+            <!-- Populated by JS -->
+          </ul>
+        </div>
+      </section>
+
+      <!-- Results Section (hidden by default) -->
+      <section id="results-section" class="results-section hidden">
+        <div class="results-header">
+          <h2>Results</h2>
+          <span id="results-summary" class="results-summary"></span>
+        </div>
+        <div id="results-grid" class="results-grid">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Price Monitor — Natural Language Price Tracking</p>
+    </footer>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

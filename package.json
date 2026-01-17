@@ -1,0 +1,38 @@
+{
+  "name": "price-monitor",
+  "version": "1.0.0",
+  "description": "Production-grade price monitoring platform with natural language interface",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node src/index.js",
+    "dev:dry": "DRY_RUN=true node src/index.js",
+    "dev:debug": "DEBUG_MODE=true node src/index.js",
+    "test": "node --test tests/*.test.js",
+    "test:integration": "node tests/integration.js"
+  },
+  "keywords": [
+    "price-monitoring",
+    "web-scraping",
+    "playwright",
+    "ai",
+    "natural-language"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "chalk": "^5.3.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "playwright": "^1.40.1",
+    "uuid": "^9.0.1",
+    "winston": "^3.11.0",
+    "yaml": "^2.3.4",
+    "zod": "^3.22.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
